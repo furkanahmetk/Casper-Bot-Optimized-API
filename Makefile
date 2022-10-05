@@ -4,6 +4,7 @@ PIP = pip3
 BIN=$(VENV)/bin
 
 run:
+	$(PIP) install virtualenv==20.16.5
 	$(PYTHON) -m virtualenv env
 	. $(BIN)/activate
 	$(PIP) install -r requirements.txt
