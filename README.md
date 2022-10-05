@@ -34,3 +34,17 @@ To test project
 make test
 ```
 
+
+## Example Usage:
+
+### From Terminal Using Curl:
+
+````
+curl --request GET 'http://192.168.1.63:5555/state?pubKey=<pubKey>'
+````
+
+## Using Postman:
+
+![](assets/postmanResult.png)
+
+**Do not forget to add your pubKey value at the end of query string**
