@@ -6,3 +6,4 @@ python-dotenv==0.19.2
 pymongo==4.2.0
 APScheduler==3.9.1
 mongomock==4.1.2
+Flask-APScheduler==1.12.4
