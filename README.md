@@ -13,7 +13,7 @@ Download and run the mongo db server from official website(https://www.mongodb.c
 
 Clone the repository.
 ```
-git clone git_address
+git clone https://github.com/furkanahmetk/Casper-Bot-Optimized-API.git
 ```
 
 Configure src.config file according to mongo db port.
