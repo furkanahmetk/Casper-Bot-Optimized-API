@@ -1,0 +1,171 @@
+{
+    "definitions": {
+        "ApiResponse": {
+            "properties": {
+                "message": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        }
+    },
+    "info": {
+        "title": "Casper Bot Optimized API",
+        "version": "v0.1.0"
+    },
+    "paths": {
+        "/delegationRate": {
+            "get": {
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "pubKey",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }
+            },
+            "options": {
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "pubKey",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/state": {
+            "get": {
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "pubKey",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }
+            },
+            "options": {
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "pubKey",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/totalDelegators": {
+            "get": {
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "pubKey",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }
+            },
+            "options": {
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "pubKey",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }
+            }
+        },
+        "/totalStake": {
+            "get": {
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "pubKey",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }
+            },
+            "options": {
+                "parameters": [
+                    {
+                        "in": "query",
+                        "name": "pubKey",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "default": {
+                        "description": "",
+                        "schema": {
+                            "$ref": "#/definitions/ApiResponse"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "swagger": "2.0"
+}
