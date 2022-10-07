@@ -51,7 +51,16 @@ make test
 ### From Terminal Using Curl:
 
 ````
-curl -X GET "http://38.242.242.73:5555/delegationRate?pubKey=<publickeytoquerry>" -H "accept: application/json"
+curl -X GET "http://<api-server-ip>:<port>/delegationRate?pubKey=<publickeytoquerry>" -H "accept: application/json"
+````
+````
+curl -X GET "http://<api-server-ip>:<port>/state?pubKey=<publickeytoquerry>" -H "accept: application/json"
+````
+````
+curl -X GET "http://<api-server-ip>:<port>/totalDelegators?pubKey=<publickeytoquerry>" -H "accept: application/json"
+````
+````
+curl -X GET "http://<api-server-ip>:<port>/totalStake?pubKey=<publickeytoquerry>" -H "accept: application/json"
 ````
 
 ## Using Auto Generated [API endpoint](http://38.242.242.73:5555/swagger-ui/#/) :
