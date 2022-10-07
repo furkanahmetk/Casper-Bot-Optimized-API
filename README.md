@@ -5,7 +5,8 @@ Application backend for Casper-Bot-Optimized-Validator-API. Capser Bot Optimized
 ## Documentation
 
 Auto generated API documentation can be found and API endpoints can be tested [here](http://38.242.242.73:5555/swagger-ui/#/).
-API end point for the documentation will be ip-of-the-server:port//swagger-ui/#/.
+
+When API is deployed, API end point for the documentation will be ip-of-the-server:port//swagger-ui/#/.
 
 ## Get Started
 
