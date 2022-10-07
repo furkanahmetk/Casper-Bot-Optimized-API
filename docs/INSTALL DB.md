@@ -2,7 +2,7 @@
 
 ## Windows and Linux: 
 
-Download MongoDB from [official website.](https://www.mongodb.com/try/download/community)
+Download MongoDB from [official website.](https://www.mongodb.com/docs/manual/administration/install-community/)
 
 ## For MacOS:
 
