@@ -11,7 +11,7 @@ API end point for the documentation will be ip-of-the-server:port//swagger-ui/#/
 
 ### Prerequisites
 
-Python3
+Python3, pip and make packages should be installed on your system.
 
 #### Install MongoDB
 
