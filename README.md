@@ -1,6 +1,6 @@
 # Bot-Optimized-Validator-Api
 
-Application backend for Casper-Bot-Optimized-Validator-API. Capser Bot Optimized API provides information about active validators working on Casper Network. Project is being developed with Python by usind Flask framework,and under Apache 2.0 License.
+Application backend for Casper-Bot-Optimized-Validator-API. Capser Bot Optimized API provides information about active validators working on Casper Network. Project is being developed with Python by using Flask framework,and under Apache 2.0 License.
 
 ## Documentation
 
