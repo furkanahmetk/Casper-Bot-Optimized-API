@@ -6,7 +6,7 @@ Application backend for Casper-Bot-Optimized-Validator-API. Capser Bot Optimized
 
 Auto generated API documentation can be found and API endpoints can be tested [here](http://38.242.242.73:5555/swagger-ui/#/).
 
-When API is deployed, API end point for the documentation will be ip-of-the-server:port//swagger-ui/#/.
+When API is deployed, API end point for the documentation will be ip-of-the-server:port/swagger-ui/#/.
 
 ## Get Started
 
@@ -71,10 +71,8 @@ Click on the method that you want to test.
 Click on try it out button.
 ![Swagger Try](docs/assets/swaggerui2.png)
 
-Enter the public key that you want to querry and click execute button.
+Enter the public key that you want to query and click execute button.
 ![Swagger Execute](docs/assets/swaggerui3.png)
 
 And finally following result will be displayed.
 ![Swagger Result](docs/assets/swaggerui3.png)
-
-**Do not forget to add your pubKey value at the end of query string**
