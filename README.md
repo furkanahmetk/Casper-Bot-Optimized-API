@@ -49,6 +49,8 @@ make test
 
 ## Example Usage:
 
+If you can't reach your API, make sure that the port(5555 as default) you have set is open.
+
 ### From Terminal Using Curl:
 
 ````
