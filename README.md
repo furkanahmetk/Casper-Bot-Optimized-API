@@ -27,7 +27,7 @@ Clone the repository.
 git clone https://github.com/furkanahmetk/Casper-Bot-Optimized-API.git
 ```
 
-Configure [src/config.py](https://github.com/furkanahmetk/Casper-Bot-Optimized-API/blob/main/src/config.py) file according to mongo db port. Config file's default configuration is as below:
+Configure [src/config.py](https://github.com/furkanahmetk/Casper-Bot-Optimized-API/blob/main/src/config.py) file according to mongo db port. Make sure that the port you have set is open. Config file's default configuration is as below:
 ```
 DEBUG = True
 TESTING = False
