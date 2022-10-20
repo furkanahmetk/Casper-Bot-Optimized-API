@@ -4,7 +4,7 @@ from src.errors import errors
 from dotenv import load_dotenv
 from src.factory import database
 from src.config import *
-from src.api import getState,getDelegationRate,getTotalDelegators,getTotalStake
+from src.api import getState,getDelegationRate,getTotalDelegators,getTotalStake,getAllValidatorValues
 from flask_apispec import FlaskApiSpec
 
 """
@@ -38,3 +38,4 @@ def configure_docs(app):
     docs.register(getDelegationRate,'api.getDelegationRate')
     docs.register(getTotalDelegators,'api.getTotalDelegators')
     docs.register(getTotalStake,'api.getTotalStake')
+    docs.register(getAllValidatorValues,'api.getAllValidatorValues')
