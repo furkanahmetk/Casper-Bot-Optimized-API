@@ -4,7 +4,7 @@ from src.errors import errors
 from dotenv import load_dotenv
 from src.factory import database
 from src.config import *
-from src.api import getState,getDelegationRate,getTotalDelegators,getTotalStake,getAllValidatorValues
+from src.api import getState,getDelegationRate,getTotalDelegators,getTotalStake,getAllValidatorValues,getApy,getUptime
 from flask_apispec import FlaskApiSpec
 
 """
@@ -23,6 +23,7 @@ def create_app(settings_overrides=None):
 
 
 def configure_settings(app, settings_override):
+    
     app.config.from_object(ProdConfig)
     if settings_override:
         app.config.from_object(settings_override)
@@ -39,3 +40,5 @@ def configure_docs(app):
     docs.register(getTotalDelegators,'api.getTotalDelegators')
     docs.register(getTotalStake,'api.getTotalStake')
     docs.register(getAllValidatorValues,'api.getAllValidatorValues')
+    docs.register(getApy,'api.getApy')
+    docs.register(getUptime,'api.getUptime')

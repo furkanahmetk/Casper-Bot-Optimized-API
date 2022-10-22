@@ -32,3 +32,16 @@ class Data(object):
         data = r.json()
         current_era = data['result']['last_added_block_info']['era_id']
         return current_era
+
+    def get_metrics(self):
+        r = requests.get(url = self.base_url+'/rpc/info_get_status', params = {})
+        data = r.json()
+        uptime = data['result']['uptime']
+        r = requests.get(url = self.base_url+'/supply', params = {})
+        data = r.json()
+        total_supply = data['data']['total']
+        r = requests.get(url = self.base_url+'/auction-metrics', params = {})
+        data = r.json()
+        era_stake = data['total_active_era_stake']
+
+        return uptime,total_supply,era_stake

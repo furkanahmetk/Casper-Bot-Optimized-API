@@ -27,20 +27,21 @@ class Validator(object):
             "era_id": "int",
             "created": "datetime",
             "updated": "datetime",
+            "bid_amount":"string",
         }
 
         self.create_required_fields = ["public_key", "is_active","fee","delegators_number","self_stake",
         "total_stake","delegator_stake","self_share","network_share"]
 
         # Fields optional for CREATE
-        self.create_optional_fields = ["_id","rank","era_id","created","updated"]
+        self.create_optional_fields = ["_id","rank","era_id","created","updated","bid_amount"]
 
         # Fields required for UPDATE
         self.update_required_fields = ["public_key", "is_active","fee","delegators_number","self_stake",
         "total_stake","delegator_stake","self_share","network_share"]
 
         # Fields optional for UPDATE
-        self.update_optional_fields = ["_id","rank","era_id","created","updated"]
+        self.update_optional_fields = ["_id","rank","era_id","created","updated","bid_amount"]
 
     def create(self, validator):
         # Validator will throw error if invalid

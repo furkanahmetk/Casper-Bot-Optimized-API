@@ -1,5 +1,5 @@
 from flask import Blueprint
-from src.model import validator
+from src.model import validator,metrics
 from flask_apispec import use_kwargs, marshal_with
 from marshmallow import Schema
 from webargs import fields
@@ -8,6 +8,8 @@ api = Blueprint('api', __name__)
 
 
 validator = validator.Validator()
+metrics = metrics.Metrics()
+
 class ApiResponse(Schema):
      message = fields.Str()
 class ValidatorResponse(Schema):
@@ -53,7 +55,7 @@ def getTotalDelegators(pubKey):
     return {"message": f"{pubKey}'s delegator number: {validator_object['delegators_number']}"}
 
 
-#Endpoint for returning delegator number of validator's from given public key   
+#Endpoint for returning all validators from given public keys
 @api.route('/getAllValidatorValues',methods=['POST'])
 @use_kwargs({'publicKeys': fields.List(fields.Str())})
 @marshal_with(ValidatorResponse(many=True))
@@ -73,5 +75,20 @@ def getAllValidatorValues(publicKeys):
         )
     return  validator_list
 
+#Endpoint for latest apy  
+@api.route('/apy',methods=['GET'])
+@marshal_with(ApiResponse())
+def getApy():
+    current_metrics = metrics.find({})
+    apy = current_metrics[0]['apy']
+    return {"message": f"apy: {float('{:.2f}'.format(apy))}%"}
 
 
+
+#Endpoint for latest uptime
+@api.route('/uptime',methods=['GET'])
+@marshal_with(ApiResponse())
+def getUptime():
+    current_metrics = metrics.find({})
+    uptime = current_metrics[0]['uptime']
+    return {"message": f"uptime: {uptime}%"}

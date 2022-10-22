@@ -8,6 +8,7 @@ if __name__ == '__main__':
     
     scheduler = APScheduler()
     task = Repeated_Task()
-    scheduler.add_job(id = '1', func = task.data_cron, trigger = 'interval', seconds = 5*60)
+    scheduler.add_job(id = '1', func = task.data_cron, trigger = 'interval', seconds = 60)
+    scheduler.add_job(id = '2', func = task.metrics_cron, trigger = 'interval', seconds = 30)
     scheduler.start()
     app.run(host='0.0.0.0',port=5555, debug=False,use_reloader=False)
