@@ -41,13 +41,43 @@ class Repeated_Task():
 
         if len(insert_validators) > 0:
             self.validator.create_many(
-                [current_validator_dict[x] for x in insert_validators])
+                [{
+                    'public_key': current_validator_dict[x]['public_key'],
+                    'is_active': current_validator_dict[x]['is_active'],
+                    'fee': current_validator_dict[x]['fee'],
+                    'delegators_number': current_validator_dict[x]['delegators_number'],
+                    'self_stake': current_validator_dict[x]['self_stake'],
+                    'total_stake': current_validator_dict[x]['total_stake'],
+                    'delegator_stake': current_validator_dict[x]['delegator_stake'],
+                    'self_share': current_validator_dict[x]['self_share'],
+                    'network_share': current_validator_dict[x]['network_share'],
+                    'rank': current_validator_dict[x]['rank'],
+                    'era_id': current_validator_dict[x]['era_id'],
+                    'bid_amount': current_validator_dict[x]['bid_amount'],
+                    'performance': current_validator_dict[x]['average_performance']['average_score']
+                } for x in insert_validators])
         if len(update_validators) > 0:
             new_validator_list = []
             for v_pub_key in update_validators:
                 id = validators_in_db_dict[v_pub_key]['_id']
-                item = current_validator_dict[v_pub_key]
-                item['_id'] = id
+                item = {
+                    '_id':id,   
+                    'public_key': current_validator_dict[v_pub_key]['public_key'],
+                    'is_active': current_validator_dict[v_pub_key]['is_active'],
+                    'fee': current_validator_dict[v_pub_key]['fee'],
+                    'delegators_number': current_validator_dict[v_pub_key]['delegators_number'],
+                    'self_stake': current_validator_dict[v_pub_key]['self_stake'],
+                    'total_stake': current_validator_dict[v_pub_key]['total_stake'],
+                    'delegator_stake': current_validator_dict[v_pub_key]['delegator_stake'],
+                    'self_share': current_validator_dict[v_pub_key]['self_share'],
+                    'network_share': current_validator_dict[v_pub_key]['network_share'],
+                    'rank': current_validator_dict[v_pub_key]['rank'],
+                    'era_id': current_validator_dict[v_pub_key]['era_id'],
+                    'bid_amount': current_validator_dict[v_pub_key]['bid_amount'],
+                    'performance': current_validator_dict[v_pub_key]['average_performance']['average_score'],
+                    'created': validators_in_db_dict[v_pub_key]['created'],
+                    'updated': validators_in_db_dict[v_pub_key]['updated']
+                }  
                 new_validator_list.append(item)
             self.validator.update_many(new_validator_list)
 

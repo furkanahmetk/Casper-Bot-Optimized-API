@@ -8,7 +8,7 @@ import uuid
 def test_key(get):
     """
     GIVEN a Flask application configured for testing
-    WHEN the '/state' endpoint is posted to 
+    WHEN the '/performance' endpoint is posted to 
     THEN check the response is valid
     """
     public_key = str(uuid.uuid4())
@@ -28,7 +28,7 @@ def test_key(get):
         "performance":99.5
     })
 
-    response = get(f'/state?pubKey={public_key}')
+    response = get(f'/performance?pubKey={public_key}')
 
     assert public_key.encode() in response.data 
 
@@ -36,7 +36,7 @@ def test_key(get):
 def test_status_code(get):
     """
     GIVEN a Flask application configured for testing
-    WHEN the '/state' endpoint is posted to 
+    WHEN the '/performance' endpoint is posted to 
     THEN check the response is valid
     """
     public_key = str(uuid.uuid4())
@@ -56,7 +56,7 @@ def test_status_code(get):
         "performance":99.5
     })
 
-    response = get(f'/state?pubKey={public_key}')
+    response = get(f'/performance?pubKey={public_key}')
 
     assert not response.status_code != 200
 
@@ -64,7 +64,7 @@ def test_status_code(get):
 def test_data(get):
     """
     GIVEN a Flask application configured for testing
-    WHEN the '/state' endpoint is posted to 
+    WHEN the '/performance' endpoint is posted to 
     THEN check the response is valid
     """
     public_key = str(uuid.uuid4())
@@ -84,6 +84,6 @@ def test_data(get):
         "performance":99.5
     })
 
-    response = get(f'/state?pubKey={public_key}')
+    response = get(f'/performance?pubKey={public_key}')
 
-    assert b'not active' in response.data 
+    assert b'99.5' in response.data 
