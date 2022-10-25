@@ -22,7 +22,8 @@ def test_size(post):
         "delegator_stake": "1914395188503733",
         "self_share": "0.06",
         "network_share": "0.02",
-        "rank": 83
+        "rank": 83,
+        "performance":99.5
     })
 
     validate.create({
@@ -36,7 +37,8 @@ def test_size(post):
         "delegator_stake": "1914395188503733",
         "self_share": "0.06",
         "network_share": "0.02",
-        "rank": 2
+        "rank": 2,
+        "performance":99.5
     })
     response = post('/getAllValidatorValues',data=dict(publicKeys=[public_key_1,public_key_2]))
     response_data =  json.loads(response.data.decode('utf-8'))
@@ -64,7 +66,8 @@ def test_status_code(post):
         "delegator_stake": "1914395188503733",
         "self_share": "0.06",
         "network_share": "0.02",
-        "rank": 83
+        "rank": 83,
+        "performance":99.5
     })
 
     validate.create({
@@ -78,7 +81,8 @@ def test_status_code(post):
         "delegator_stake": "1914395188503733",
         "self_share": "0.06",
         "network_share": "0.02",
-        "rank": 2
+        "rank": 2,
+        "performance":99.5
     })
     response = post('/getAllValidatorValues',data=dict(publicKeys=[public_key_1,public_key_2]))
     

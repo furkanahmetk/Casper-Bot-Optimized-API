@@ -4,7 +4,7 @@ from src.errors import errors
 from dotenv import load_dotenv
 from src.factory import database
 from src.config import *
-from src.api import getState,getDelegationRate,getTotalDelegators,getTotalStake,getAllValidatorValues,getApy,getUptime
+from src.api import getState,getDelegationRate,getTotalDelegators,getTotalStake,getAllValidatorValues,getApy,getUptime,getPerformance
 from flask_apispec import FlaskApiSpec
 
 """
@@ -42,3 +42,4 @@ def configure_docs(app):
     docs.register(getAllValidatorValues,'api.getAllValidatorValues')
     docs.register(getApy,'api.getApy')
     docs.register(getUptime,'api.getUptime')
+    docs.register(getPerformance,'api.getPerformance')

@@ -13,8 +13,10 @@ class Data(object):
     def get_validator_list(self):
         current_era = self.get_current_era()
         page = 1
+        limit = 100
+        fields = 'average_performance'
         validators = []
-        PARAMS = {'era_id':current_era,'page':page}
+        PARAMS = {'era_id':current_era,'page':page,'limit':limit,'fields':fields}
         r = requests.get(url = self.base_url+'/validators', params = PARAMS)
         data = r.json()
         validators.extend(data['data'])

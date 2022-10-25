@@ -23,7 +23,8 @@ def test_public_key(get):
         "delegator_stake": "1914395188503733",
         "self_share": "0.06",
         "network_share": "0.02",
-        "rank": 83
+        "rank": 83,
+        "performance":99.5
     })
 
     response = get(f'/delegationRate?pubKey={public_key}')
@@ -50,7 +51,8 @@ def test_status_code(get):
         "delegator_stake": "1914395188503733",
         "self_share": "0.06",
         "network_share": "0.02",
-        "rank": 83
+        "rank": 83,
+        "performance":99.5
     })
 
     response = get(f'/delegationRate?pubKey={public_key}')
@@ -77,7 +79,8 @@ def test_data(get):
         "delegator_stake": "1914395188503733",
         "self_share": "0.06",
         "network_share": "0.02",
-        "rank": 83
+        "rank": 83,
+        "performance":99.5
     })
 
     response = get(f'/delegationRate?pubKey={public_key}')
