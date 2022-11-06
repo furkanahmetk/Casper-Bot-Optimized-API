@@ -74,7 +74,7 @@ def getTotalDelegators(pubKey):
 @marshal_with(ApiResponse())
 def getPerformance(pubKey):
     validator_object = validator.find_one_by_public_key(pubKey)
-    return {"message": f"{pubKey}'s performance: {validator_object['performance']}%"}
+    return {"message": f"{pubKey}'s performance: {validator_object['performance']}"}
 
 
 # Endpoint for returning all validators from given public keys
