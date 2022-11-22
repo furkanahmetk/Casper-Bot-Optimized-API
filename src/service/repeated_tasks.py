@@ -1,6 +1,8 @@
 from src.service import data
 from src.model import validator
 from src.model import metrics
+import time
+
 """
 Defines repeated jobs of the system. It calls, controls and saves the data flow to the system. It seperates the data already in the system with the new data.
 It either inserts or updates the data
@@ -15,6 +17,8 @@ class Repeated_Task():
         self.metrics = metrics.Metrics()
 
     def data_cron(self):
+        start = time.time()
+
         # Get validator data from data object
         validator_list = self.data.get_validator_list()
 
@@ -80,7 +84,8 @@ class Repeated_Task():
                 }  
                 new_validator_list.append(item)
             self.validator.update_many(new_validator_list)
-
+        end = time.time()
+        print(end - start)
     def metrics_cron(self):
         uptime, total_supply, era_stake = self.data.get_metrics()
         total_supply = float(total_supply)
