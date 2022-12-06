@@ -27,7 +27,6 @@ def test_total_stake(get):
     })
     response = get(f'/totalStake?pubKey={public_key}')
 
-    assert public_key.encode() in response.data 
     assert not response.status_code != 200
     assert b'1915602215052068' in response.data 
 
@@ -57,7 +56,6 @@ def test_delegationRate(get):
 
     response = get(f'/delegationRate?pubKey={public_key}')
 
-    assert public_key.encode() in response.data 
     assert not response.status_code != 200
     assert b'25' in response.data 
 
@@ -87,7 +85,6 @@ def test_state(get):
 
     response = get(f'/state?pubKey={public_key}')
 
-    assert public_key.encode() in response.data 
     assert not response.status_code != 200
     assert b'not active' in response.data 
 
@@ -116,6 +113,5 @@ def test_totalDelegators(get):
 
     response = get(f'/totalDelegators?pubKey={public_key}')
 
-    assert public_key.encode() in response.data 
     assert not response.status_code != 200
     assert b'42' in response.data 

@@ -32,9 +32,9 @@ class ValidatorResponse(Schema):
 def getState(pubKey):
     validator_object = validator.find_one_by_public_key(pubKey)
     if validator_object["is_active"]:
-        return {"message": f"{pubKey}: active"}
+        return {"message": "active"}
     else:
-        return {"message": f"{pubKey}: not active"}
+        return {"message": "not active"}
 
 # Endpoint for returning delegation fee of validator's from given public key
 
@@ -44,7 +44,7 @@ def getState(pubKey):
 @marshal_with(ApiResponse())
 def getDelegationRate(pubKey):
     validator_object = validator.find_one_by_public_key(pubKey)
-    return {"message": f"{pubKey}'s delegation fee: {validator_object['fee']}%"}
+    return {"message": f"{validator_object['fee']}"}
 
 # Endpoint for returning total stake of validator's from given public key
 
@@ -54,7 +54,7 @@ def getDelegationRate(pubKey):
 @marshal_with(ApiResponse())
 def getTotalStake(pubKey):
     validator_object = validator.find_one_by_public_key(pubKey)
-    return {"message": f"{pubKey}'s total stake: {validator_object['total_stake']} "}
+    return {"message": f"{validator_object['total_stake']}"}
 
 # Endpoint for returning delegator number of validator's from given public key
 
@@ -64,7 +64,7 @@ def getTotalStake(pubKey):
 @marshal_with(ApiResponse())
 def getTotalDelegators(pubKey):
     validator_object = validator.find_one_by_public_key(pubKey)
-    return {"message": f"{pubKey}'s delegator number: {validator_object['delegators_number']}"}
+    return {"message": f"{validator_object['delegators_number']}"}
 
 # Endpoint for returning performance of validator's from given public key
 
@@ -74,7 +74,7 @@ def getTotalDelegators(pubKey):
 @marshal_with(ApiResponse())
 def getPerformance(pubKey):
     validator_object = validator.find_one_by_public_key(pubKey)
-    return {"message": f"{pubKey}'s performance: {validator_object['performance']}"}
+    return {"message": f"{validator_object['performance']}"}
 
 
 # Endpoint for returning all validators from given public keys
@@ -106,7 +106,7 @@ def getAllValidatorValues(publicKeys):
 def getApy():
     current_metrics = metrics.find({})
     apy = current_metrics[0]['apy']
-    return {"message": f"apy: {float('{:.2f}'.format(apy))}%"}
+    return {"message":  f"{float('{:.2f}'.format(apy))}"}
 
 
 # Endpoint for latest uptime
@@ -115,4 +115,4 @@ def getApy():
 def getUptime():
     current_metrics = metrics.find({})
     uptime = current_metrics[0]['uptime']
-    return {"message": f"uptime: {uptime}%"}
+    return {"message": f'{uptime}'}
